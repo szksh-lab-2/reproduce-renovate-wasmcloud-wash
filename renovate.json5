@@ -1,0 +1,28 @@
+{
+  "customManagers": [
+    {
+      "customType": "regex",
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "wasmCloud/wasmCloud/wash",
+      "extractVersionTemplate": "^wash-v(?<version>.*)$",
+      "managerFilePatterns": [
+       "/aqua\\.yaml/"
+      ],
+      "matchStrings": [
+        "name: wasmCloud/wasmCloud/wash@wash-v(?<currentValue>[^'\" \\n]+)",
+      ],
+      "packageNameTemplate": "wasmCloud/wasmCloud"
+    } 
+  ],
+  "packageRules": [
+    {
+      "allowedVersions": "/^wash-v/",
+      "matchDepNames": [
+        "wasmCloud/wasmCloud/wash"
+      ],
+      "matchFileNames": [
+        "aqua.yaml",
+      ]
+    },
+  ],
+}
